@@ -248,6 +248,9 @@ try {
   document.addEventListener('visibilitychange', function () { if (document.hidden) { ZT_H = !!ZT_S; ztPing('page_hide'); } else if (ZT_H) { ZT_H = 0; ztPlay(true); } });
   document.addEventListener('click', function (e) { try { var a = e.target && e.target.closest && e.target.closest('a[href]'); if (!a) return; var u = new URL(a.href, location.href); if (!/^https?:$/.test(u.protocol)) return; if (u.host === location.host || /(^|\.)zaibgames\.com$/.test(u.host)) { if (u.pathname.indexOf('/gobble-hole/') !== 0) zt('more_games_click', { link_url: u.href }); } else zt('outbound_click', { link_url: u.href, link_domain: u.host, outbound: true }); } catch (err) {} }, true);
 } catch (e) {}
+
+/* Quiet runtime error reporting: logs to GA as js_error (deduped, capped), never shown to players. */
+try { (function () { var seen = {}, n = 0; function rep(m, w) { try { m = String(m || 'err').slice(0, 90); if (seen[m] || n >= 10) return; seen[m] = 1; n++; zt('js_error', { msg: m, where: w }); } catch (x) {} } window.addEventListener('error', function (e) { rep((e.error && e.error.message) || e.message, 'global'); }); window.addEventListener('unhandledrejection', function (e) { var r = e.reason; rep((r && r.message) || r, 'promise'); }); })(); } catch (e) {}
 'use strict';
 /* ---------- core helpers ---------- */
 var TAU = Math.PI * 2;
