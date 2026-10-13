@@ -1,0 +1,42 @@
+{
+  "id": "/gobble-hole/",
+  "name": "Gobble Hole",
+  "short_name": "Gobble Hole",
+  "description": "Gobble Hole by Zaib: drag a hungry black hole around a colourful 3D city and swallow cones, people, cars, buses and whole buildings. Grow bigger, eat rival holes, beat 7 AI holes in 2-minute rounds, clear maps in Solo and survive Battle. Free in your browser.",
+  "lang": "en",
+  "start_url": "/gobble-hole/?source=pwa",
+  "scope": "/gobble-hole/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#1b1035",
+  "background_color": "#1b1035",
+  "categories": [
+    "games"
+  ],
+  "icons": [
+    {
+      "src": "/gobble-hole/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/gobble-hole/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/gobble-hole/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/gobble-hole/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
